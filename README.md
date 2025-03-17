@@ -8,6 +8,14 @@ Bu proje, OpenCV kütüphanesi kullanılarak basit bir görüntü okuma ve göst
 - Resmi ekranda gösterme
 - Görüntü boyutlarını ve veri tipini gösterme
 
+## Örnek Çıktı
+
+![Örnek Resim](resim.jpg)
+
+Programın çalıştırılması sonucu:
+- Görüntü boyutu: (yükseklik, genişlik, kanal)
+- Veri tipi: uint8
+
 ## Gereksinimler
 
 Projeyi çalıştırmak için aşağıdaki kütüphanelerin yüklü olması gerekir:
