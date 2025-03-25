@@ -30,10 +30,12 @@ def add_salt_pepper_noise(image, prob=0.05):
 
 def add_poisson_noise(image):
     """Poisson gürültüsü ekle"""
-    vals = len(np.unique(image))
-    vals = 2 ** np.ceil(np.log2(vals))
-    noisy = np.random.poisson(image * vals) / float(vals)
-    return np.clip(noisy*255, 0, 255).astype(np.uint8)
+    # Görüntüyü [0,1] aralığına normalize et
+    norm_image = image.astype(float) / 255.0
+    # Poisson gürültüsü ekle
+    noisy = np.random.poisson(norm_image * 50) / 50.0
+    # [0,255] aralığına geri dönüştür
+    return np.clip(noisy * 255, 0, 255).astype(np.uint8)
 
 # Gürültülü görüntüleri oluştur
 gaussian_noisy = add_gaussian_noise(image)
